@@ -29,5 +29,8 @@ terraform.rc
 # Ignore lock files (optional - typically you want to commit this)
 # .terraform.lock.hcl
 
+# Python environment
+.pdm-python
+
 # Temp files
 /tmp
