@@ -1,0 +1,189 @@
+schema_name: ai_job_replacement
+version: "1.0"
+description: Schema for AI job replacement dataset (2020-2026)
+source: ai_job_replacement_2020_2026_v2.csv
+
+columns:
+  - name: job_id
+    type: integer
+    nullable: false
+    description: Unique identifier for each job record
+    example: 0
+
+  - name: job_role
+    type: string
+    nullable: false
+    description: Job title/role name
+    example: "Data Analyst"
+    allowed_values:
+      - "Data Analyst"
+      - "Accountant"
+      - "Teacher"
+      - "Customer Support Rep"
+      - "Software Engineer"
+      - "Marketing Specialist"
+      - "Financial Analyst"
+      - "HR Manager"
+      - "Mechanical Engineer"
+
+  - name: industry
+    type: string
+    nullable: false
+    description: Industry sector
+    example: "Technology"
+    allowed_values:
+      - "Technology"
+      - "Finance"
+      - "Healthcare"
+      - "Manufacturing"
+      - "Retail"
+      - "Education"
+      - "Transportation"
+      - "Energy"
+
+  - name: country
+    type: string
+    nullable: false
+    description: Country where the job exists
+    example: "Canada"
+    allowed_values:
+      - "USA"
+      - "Canada"
+      - "Brazil"
+      - "Australia"
+      - "Japan"
+      - "Singapore"
+      - "Germany"
+
+  - name: year
+    type: integer
+    nullable: false
+    description: Year of the data record
+    example: 2021
+    constraints:
+      min: 2020
+      max: 2026
+
+  - name: automation_risk_percent
+    type: float
+    nullable: false
+    description: Percentage risk of job automation
+    example: 26.22
+    constraints:
+      min: 0.0
+      max: 100.0
+
+  - name: ai_replacement_score
+    type: float
+    nullable: false
+    description: AI replacement likelihood score (0-100)
+    example: 30.94
+    constraints:
+      min: 0.0
+      max: 100.0
+
+  - name: skill_gap_index
+    type: float
+    nullable: false
+    description: Index measuring skill gap for workers (0-100)
+    example: 73.2
+    constraints:
+      min: 0.0
+      max: 100.0
+
+  - name: salary_before_usd
+    type: float
+    nullable: false
+    description: Average salary before AI adoption (USD)
+    example: 101839.02
+    constraints:
+      min: 0.0
+
+  - name: salary_after_usd
+    type: float
+    nullable: false
+    description: Average salary after AI adoption (USD)
+    example: 99454.42
+    constraints:
+      min: 0.0
+
+  - name: salary_change_percent
+    type: float
+    nullable: false
+    description: Percentage change in salary
+    example: -2.34
+
+  - name: skill_demand_growth_percent
+    type: float
+    nullable: false
+    description: Growth rate of skill demand
+    example: 2.66
+
+  - name: remote_feasibility_score
+    type: float
+    nullable: false
+    description: Score indicating how feasible the job is to do remotely (0-100)
+    example: 15.23
+    constraints:
+      min: 0.0
+      max: 100.0
+
+  - name: ai_adoption_level
+    type: float
+    nullable: false
+    description: Level of AI adoption in the industry (0-100)
+    example: 86.62
+    constraints:
+      min: 0.0
+      max: 100.0
+
+  - name: education_requirement_level
+    type: integer
+    nullable: false
+    description: |
+      Education level required (1-5 scale)
+      1=High School, 2=Associate, 3=Bachelor, 4=Master, 5=PhD
+    example: 2
+    constraints:
+      min: 1
+      max: 5
+
+  - name: automation_risk_category
+    type: string
+    nullable: false
+    description: Categorical risk level
+    example: "Low"
+    allowed_values:
+      - "Low"
+      - "Medium"
+      - "High"
+
+  - name: skill_transition_pressure
+    type: float
+    nullable: false
+    description: Pressure to transition to new skills (0-100)
+    example: 49.71
+    constraints:
+      min: 0.0
+      max: 100.0
+
+  - name: wage_volatility_index
+    type: float
+    nullable: false
+    description: Index of wage volatility
+    example: 2.34
+
+  - name: reskilling_urgency_score
+    type: float
+    nullable: false
+    description: Urgency score for reskilling requirements (0-100)
+    example: 33.15
+    constraints:
+      min: 0.0
+      max: 100.0
+
+  - name: ai_disruption_intensity
+    type: float
+    nullable: false
+    description: Intensity of AI disruption impact
+    example: 22.711764
