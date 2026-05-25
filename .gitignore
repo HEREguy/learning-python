@@ -32,6 +32,9 @@ terraform.rc
 # Python environment
 .pdm-python
 
+# Ignore Python bytecode caches
+__pycache__/
+
 # Temp files
 /tmp
 TODO.md
